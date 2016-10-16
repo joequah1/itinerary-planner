@@ -1,0 +1,20 @@
+version: '2'
+services:
+  web:
+    build: .
+    container_name : itinerary-planner
+    command: npm start
+    volumes:
+      - .:/angular2/itinerary-planner
+      - /angular2/itinerary-planner/node_modules
+    ports:
+      - 7007:7007
+    links :
+      - server:server
+
+  server:
+    build: ./json-server
+    container_name : itinerary-planner-json-server
+    command: json-server json-server/db.json --routes json-server/routes.json --ports 80
+    volumes:
+      - .:/data

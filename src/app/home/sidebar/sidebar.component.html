@@ -1,0 +1,35 @@
+
+    <div class="col-sm-3 sidebar">
+	    <div class="mini-submenu">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	    </div>
+
+	    <div class="btn btn-success" (click)="addDay()">Add Day</div>
+
+	    <div class="list-group" *ngFor="let day of days; let i = index;">
+	        <span href="#" class="list-group-item active" [class.selected]="selectedDay==day" (click)="selectDay(day)">
+	            <span class="map-icon-preview day-{{day.day}}"></span>
+	            Day {{ i+1 }}
+	            
+	            <span class="pull-right" id="slide-submenu" *ngIf="day != 0" (click)="removeDay(day)">
+	                <i class="fa fa-times"></i>
+	            </span>
+	        </span>
+
+	        <a href="#" class="list-group-item" *ngFor="let marker of day.markers" (click)="selectMarker(marker)">
+	            <i class="fa fa-search"></i>
+	            {{marker.title}} 
+	            <span class="pull-right" id="slide-submenu" (click)="removeMarker($event,day,marker)">
+	                <i class="fa fa-times"></i>
+	            </span>
+	        </a>
+
+			<a href="#" class="list-group-item" *ngIf="day.markers.length==0">
+	            <i class="fa fa-search"></i>
+	            No Plan Yet 
+	        </a>	        
+	    </div>        
+	</div>
+

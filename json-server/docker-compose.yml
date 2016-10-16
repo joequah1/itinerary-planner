@@ -1,0 +1,10 @@
+version: '2'
+services:
+  web:
+    build: .
+    container_name : json-server
+    command: json-server db.json --routes routes.json
+    volumes:
+      - .:/data
+    ports:
+      - 3000:3000

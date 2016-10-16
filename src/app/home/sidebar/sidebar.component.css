@@ -1,0 +1,76 @@
+.mini-submenu{
+  display:none;  
+  background-color: rgba(0, 0, 0, 0);  
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+  padding: 9px;  
+  /*position: relative;*/
+  width: 42px;
+
+}
+
+.mini-submenu:hover{
+  cursor: pointer;
+}
+
+.mini-submenu .icon-bar {
+  border-radius: 1px;
+  display: block;
+  height: 2px;
+  width: 22px;
+  margin-top: 3px;
+}
+
+.mini-submenu .icon-bar {
+  background-color: #000;
+}
+
+#slide-submenu{
+  background: rgba(0, 0, 0, 0.45);
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.sidebar a.list-group-item:hover {
+    text-decoration: none;
+}
+.sidebar a.list-group-item .fa {
+    color: white;
+}
+.sidebar a.list-group-item .fa:hover {
+    color: red;
+}
+
+.list-group {
+  margin-top: 10px;
+}
+.list-group-item.active.selected {
+  background-color: darkblue;
+}
+
+
+
+.map-icon-preview {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    background-size: 24px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 0px;
+    float: left;
+    margin-right: 10px;
+}
+.map-icon-preview.day-1 {
+    background-image: url(public/images/icons/map_pin/pin_1.png);
+}
+.map-icon-preview.day-2 {
+    background-image: url(public/images/icons/map_pin/pin_2.png);
+}
+.map-icon-preview.day-3 {
+    background-image: url(public/images/icons/map_pin/pin_3.png);
+}
+.map-icon-preview.day-4 {
+    background-image: url(public/images/icons/map_pin/pin_4.png);
+}

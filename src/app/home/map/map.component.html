@@ -1,0 +1,30 @@
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+
+<sebm-google-map [latitude]="focus.lat" [longitude]="focus.lng">
+<input id="search" type="text" name="">
+      <sebm-google-map-marker  *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng" [label]="marker.label" [title]="marker.title" [iconUrl]="marker.iconUrl">
+      	<sebm-google-map-info-window>
+          <strong>InfoWindow content</strong>
+        </sebm-google-map-info-window>
+		</sebm-google-map-marker>
+
+</sebm-google-map>
+
+<div id="search-component">
+	<h4>H {{markers.length}}</h4>
+	<div>
+		<div *ngFor="let marker of markers">
+		{{marker.lat}}
+		{{marker.label}}
+		{{marker.title}}
+		</div>
+	</div>
+
+	<div *ngFor="let i of item">
+		{{i.a}}
+	</div>
+
+	Item {{item}}
+</div>
