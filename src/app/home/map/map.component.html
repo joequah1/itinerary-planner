@@ -1,30 +1,38 @@
 
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
+<form class="ip-map-search">
+	<ip-map-search></ip-map-search>
+</form>
 
-<sebm-google-map [latitude]="focus.lat" [longitude]="focus.lng">
-<input id="search" type="text" name="">
-      <sebm-google-map-marker  *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng" [label]="marker.label" [title]="marker.title" [iconUrl]="marker.iconUrl">
-      	<sebm-google-map-info-window>
-          <strong>InfoWindow content</strong>
+<sebm-google-map id="map" [latitude]="focus.lat" [longitude]="focus.lng" [styles]="styles" [zoom]="9">
+	<input id="search" type="text" name="">
+	<sebm-google-map-marker  *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng" [label]="marker.label" [title]="marker.title" [iconUrl]="marker.iconUrl">
+		<sebm-google-map-info-window>
+			<h1>{{marker.name}}</h1>
+			<p>{{marker.formatted_address}}<p>
+
+			<div id="carousel-example-generic" class="carousel slide info-window" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" *ngFor="let photo of marker.photos; let i = index" [class.active]="i==0" [attr.data-slide-to]="i"></li>
+				</ol>
+				<div class="carousel-inner" role="listbox">
+					<div class="carousel-item active" *ngFor="let photo of marker.photos; let i = index" [class.active]="i==0">
+						<img src="{{photo.getUrl({maxWidth:480, maxHeight:320})}}">
+					</div>
+				</div>
+				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				<span class="icon-prev" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				<span class="icon-next" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+				</a>
+			</div>
+
+			
         </sebm-google-map-info-window>
-		</sebm-google-map-marker>
+	</sebm-google-map-marker>
 
 </sebm-google-map>
-
-<div id="search-component">
-	<h4>H {{markers.length}}</h4>
-	<div>
-		<div *ngFor="let marker of markers">
-		{{marker.lat}}
-		{{marker.label}}
-		{{marker.title}}
-		</div>
-	</div>
-
-	<div *ngFor="let i of item">
-		{{i.a}}
-	</div>
-
-	Item {{item}}
-</div>

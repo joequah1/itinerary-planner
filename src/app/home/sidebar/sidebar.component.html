@@ -6,7 +6,7 @@
 	        <span class="icon-bar"></span>
 	    </div>
 
-	    <div class="btn btn-success" (click)="addDay()">Add Day</div>
+	    <div class="btn btn-success btn-lg" (click)="addDay()">Add Day</div>
 
 	    <div class="list-group" *ngFor="let day of days; let i = index;">
 	        <span href="#" class="list-group-item active" [class.selected]="selectedDay==day" (click)="selectDay(day)">

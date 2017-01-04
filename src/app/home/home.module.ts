@@ -4,8 +4,9 @@ import { SharedModule }       	from '../shared/shared.module';
 import { HomeComponent } 		from './home.component';
 import { SidebarComponent } 	from './sidebar';
 import { MapComponent } 		from './map';
+import { MapSearchComponent } 	from './map-search';
 
-import { AgmCoreModule } from 'angular2-google-maps/core';
+import { AgmCoreModule, GoogleMapsAPIWrapper } from 'angular2-google-maps/core';
 
 import { MarkerService, MapService, DayService, NavService } from './shared';
 
@@ -20,9 +21,9 @@ import { routing }            	from './home.routing';
         	libraries: ['places']
 	    })
 	],
-	providers : [ MarkerService, MapService, DayService, NavService ],
+	providers : [ GoogleMapsAPIWrapper, MarkerService, MapService, DayService, NavService ],
 	declarations: [
-		HomeComponent, SidebarComponent, MapComponent
+		HomeComponent, SidebarComponent, MapComponent, MapSearchComponent
 	]
 })
 export class HomeModule { }

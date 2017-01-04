@@ -1,3 +1,7 @@
+.btn-lg {
+  width: 100%;
+}
+
 .mini-submenu{
   display:none;  
   background-color: rgba(0, 0, 0, 0);  
